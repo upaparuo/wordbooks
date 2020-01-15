@@ -1,0 +1,8 @@
+<div class="row">
+    <aside class="col-sm-8">
+      <%= form_with(model: @wordlist, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :name, class: 'form-control', rows: 1 %>
+        </div>
+        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <% end %>
