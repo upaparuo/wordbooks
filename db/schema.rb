@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_094248) do
+ActiveRecord::Schema.define(version: 2020_01_16_021228) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -27,5 +27,18 @@ ActiveRecord::Schema.define(version: 2020_01_15_094248) do
     t.index ["user_id"], name: "index_wordlists_on_user_id"
   end
 
+  create_table "words", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.string "meaning"
+    t.bigint "wordlist_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_words_on_user_id"
+    t.index ["wordlist_id"], name: "index_words_on_wordlist_id"
+  end
+
   add_foreign_key "wordlists", "users"
+  add_foreign_key "words", "users"
+  add_foreign_key "words", "wordlists"
 end

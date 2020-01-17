@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  meaning: MyString
+  wordlist: one
+  user: one
+
+two:
+  content: MyString
+  meaning: MyString
+  wordlist: two
+  user: two

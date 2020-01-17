@@ -1,0 +1,31 @@
+<h1>単語作成ページ</h1>
+
+
+
+<div class="row">
+  
+    <aside class="col-sm-8">
+      
+      <%= form_with(model: @word, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+        <div class="form-group">
+          <%= f.label :content, '単語' %>
+          <%= f.text_area :content, class: 'form-control', rows: 1 %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :meaning, '意味' %>
+          <%= f.text_area :meaning, class: 'form-control', rows: 1 %>
+        </div>
+        
+        <div class="form-group">
+           <%= f.label :単語帳を選択 %>
+           <%= f.collection_select :wordlist_id, Wordlist.all, :id, :name %>
+        </div>
+        
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+      <% end %>
+      
+    </aside>
+ 
+</div>

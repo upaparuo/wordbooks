@@ -1,0 +1,17 @@
+<h1>単語一覧</h1>
+
+<ul>
+    <% @words.each do |word| %>
+    <div class='card' style="margin: 15px;">
+        <div class='card-body text-center'>
+         <p>単語：<%= word.content %></p>
+         <p>意味：<%= word.meaning %></p>
+            <% if current_user == word.user %>
+            
+                <%= link_to "削除", word, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            
+            <% end %>
+        </div>
+    </div>
+    <% end %>
+</ul>

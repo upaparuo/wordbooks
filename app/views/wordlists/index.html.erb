@@ -1,6 +1,4 @@
-<h1 class='text-center'>自分の単語帳一覧</h1>
-<%= link_to '単語帳新規作成', new_wordlist_path, class: 'btn btn-lg btn-primary' %>
-<%= link_to '単語登録', new_word_path, class: 'btn btn-lg btn-primary' %>
+<h1>みんなの単語帳</h1>
 
 <ul>
     <% @wordlists.each do |wordlist| %>
@@ -16,4 +14,3 @@
     </div>
     <% end %>
 </ul>
-

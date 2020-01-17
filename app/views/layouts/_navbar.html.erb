@@ -2,9 +2,9 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
     <ul class="navbar-nav justify-content-around">
         <li class="nav-item"><a href="#" class="nav-link">ブックマーク</a></li>
-        <li class="nav-item active"><a href="#" class="nav-link">自分の単語帳</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">誰かの単語帳</a></li>
-        <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+        <li class="nav-link active"><%= link_to '自分の単語帳', root_url %></li>
+        <li class="nav-link"><%= link_to 'みんなの単語帳', wordlists_path %></li>
+        <li class="nav-link"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
     </ul>
 </nav>
 <% end %>
