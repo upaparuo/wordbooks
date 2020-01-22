@@ -4,7 +4,7 @@
     <% @wordlists.each do |wordlist| %>
     <div class='card' style="margin: 15px;">
         <div class='card-body text-center'>
-         <%= link_to wordlist.name, words_path %>
+         <%= link_to wordlist.name, word_path(wordlist.id) %>
             <% if current_user == wordlist.user %>
             
                 <%= link_to "削除", wordlist, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>

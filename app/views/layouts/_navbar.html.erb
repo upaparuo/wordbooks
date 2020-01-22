@@ -1,7 +1,7 @@
 <% if logged_in? %>
 <nav class="navbar navbar-expand navbar-light bg-light">
     <ul class="navbar-nav justify-content-around">
-        <li class="nav-item"><a href="#" class="nav-link">ブックマーク</a></li>
+        <li class="nav-link"><%= link_to 'ブックマーク', bookwords_user_path(current_user) %></li>
         <li class="nav-link active"><%= link_to '自分の単語帳', root_url %></li>
         <li class="nav-link"><%= link_to 'みんなの単語帳', wordlists_path %></li>
         <li class="nav-link"><%= link_to 'ログアウト', logout_path, method: :delete %></li>

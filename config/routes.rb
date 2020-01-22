@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'bookmarks/create'
+  get 'bookmarks/destroy'
   root to: 'toppages#index'
   
   get 'login', to: 'sessions#new'
@@ -7,8 +9,14 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users
+  resources :users do
+    member do 
+          get :bookwords
+          
+    end
+  end
   resources :wordlists
   resources :words
+  resources :bookmarks
   
 end

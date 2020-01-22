@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def bookwords
+    @words = current_user.bookwords
+  end
+  
   private
   
     def user_params

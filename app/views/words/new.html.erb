@@ -20,7 +20,7 @@
         
         <div class="form-group">
            <%= f.label :単語帳を選択 %>
-           <%= f.collection_select :wordlist_id, Wordlist.all, :id, :name %>
+           <%= f.collection_select :wordlist_id, current_user.wordlists, :id, :name %>
         </div>
         
         <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>

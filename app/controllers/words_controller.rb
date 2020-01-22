@@ -1,9 +1,11 @@
 class WordsController < ApplicationController
+  before_action :correct_user, only: [:destroy]
+  
   def index
-    @words = Word.where(word_id:self.id)
   end
 
   def show
+    @words = Word.where(wordlist_id: params[:id])
   end
 
   def new
@@ -23,6 +25,10 @@ class WordsController < ApplicationController
   end
 
   def destroy
+    
+    @word.destroy
+    flash[:success] = '単語を削除しました'
+    redirect_back(fallback_location: root_path)
   end
 
   def edit
@@ -36,4 +42,12 @@ class WordsController < ApplicationController
   def word_params
     params.require(:word).permit(:content, :meaning, :wordlist_id)
   end
+  
+  def correct_user
+    @word = current_user.words.find_by(id: params[:id])
+    unless @word
+      redirect_to root_url
+    end
+  end
+  
 end
