@@ -1,2 +1,13 @@
-<h1>Wordlists#edit</h1>
-<p>Find me in app/views/wordlists/edit.html.erb</p>
+<h1>単語帳編集ページ</h1>
+
+<div class="row">
+    <aside class='col-sm-6'>
+        <%= form_with(model: @wordlist, local: true) do |f| %>
+          <div class="form-group">
+              <%= f;texg_area :name, class: 'form-control' , rows: 2 %>
+              
+          </div>
+           <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </aside>
+</div>

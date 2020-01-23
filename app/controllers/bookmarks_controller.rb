@@ -6,7 +6,7 @@ class BookmarksController < ApplicationController
     word = Word.find(params[:word_id])
     current_user.bookmark(word)
     flash[:success] = 'ブックマークしました'
-    redirect_to word_path
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy

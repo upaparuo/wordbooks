@@ -1,7 +1,9 @@
 class WordsController < ApplicationController
   before_action :correct_user, only: [:destroy]
+  before_action :require_user_logged_in
   
   def index
+    
   end
 
   def show
@@ -32,10 +34,21 @@ class WordsController < ApplicationController
   end
 
   def edit
+    @word = Word.find(params[:id])
   end
 
   def update
+    @word = Word.find(params[:id])
+    if @word.update(word_params)
+      flash[:success] = '更新しました'
+      redirect_to root_url
+    else
+      flash.now[:danger] = '更新されませんでした'
+      render :edit
+    end
   end
+  
+  
   
   private
   

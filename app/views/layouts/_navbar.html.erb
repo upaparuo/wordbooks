@@ -1,10 +1,10 @@
 <% if logged_in? %>
 <nav class="navbar navbar-expand navbar-light bg-light">
     <ul class="navbar-nav justify-content-around">
-        <li class="nav-link"><%= link_to 'ブックマーク', bookwords_user_path(current_user) %></li>
-        <li class="nav-link active"><%= link_to '自分の単語帳', root_url %></li>
-        <li class="nav-link"><%= link_to 'みんなの単語帳', wordlists_path %></li>
-        <li class="nav-link"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+        <li class="nav-item"><%= link_to 'ブックマーク', bookwords_user_path(current_user), class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to '自分の単語帳', root_url, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to 'みんなの単語帳', wordlists_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to 'ログアウト', logout_path,data: { confirm: "ログアウトしますか?" }, method: :delete, class: "nav-link" %></li>
     </ul>
 </nav>
 <% end %>

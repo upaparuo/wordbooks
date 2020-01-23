@@ -1,7 +1,7 @@
 <% if current_user.bookwords?(word) %>
   <%= form_with(model: current_user.bookmarks.find_by(word_id: word.id), local: true, method: :delete) do |f| %>
     <%= hidden_field_tag :word_id, word.id %>
-    <%= f.submit '解除', class: 'btn btn-danger btn-sm' %>
+    <%= f.submit 'ブックマーク解除', class: 'btn btn-danger btn-sm' %>
   <% end %>
 <% else %>
   <%= form_with(model: current_user.bookmarks.build, local: true) do |f| %>

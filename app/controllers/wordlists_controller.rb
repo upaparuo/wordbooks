@@ -32,6 +32,7 @@ class WordlistsController < ApplicationController
   end
 
   def edit
+    @wordlist = Wordlist.find(params[:id])
   end
   
   private
